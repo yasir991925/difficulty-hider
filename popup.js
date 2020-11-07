@@ -1,5 +1,6 @@
 const setup = () => {
   try {
+    console.log("difficulty is hidden");
     const el = document.querySelector("[diff]");
     const difficulty = el.innerText;
     el.innerHTML = "";
@@ -11,8 +12,9 @@ const setup = () => {
     });
     el.appendChild(button);
   } catch (error) {
-    // setup();
-    console.log("not loaded");
+    setTimeout(() => {
+      setup();
+    }, 10);
   }
 };
 
